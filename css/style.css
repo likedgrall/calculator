@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Jura|Rajdhani');
+
+body {
+    --greyButton: rgb(142, 142, 142);
+    --orangeButton: rgb(238, 155, 0);
+    --blackButton: rgb(47, 47, 47);
+    background-color: #000;
+    overflow: hidden;
+}
+
+.star {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 100%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+}
+
+@keyframes move_right {
+    from {
+        transform: rotate(0deg) translateX(8px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(8px) rotate(-360deg);
+    }
+}
+
+@keyframes move_left {
+    from {
+        transform: rotate(0deg) translateX(8px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg) translateX(8px) rotate(360deg);
+    }
+}
+
+/* интро панель */
+.intro {
+    color: #63baf7;
+    margin: 1em;
+    font-family: Jura;
+    font-size: 11pt
+}
+
+.intro h3 {
+    font-size: 16pt;
+    margin-bottom: 0
+}
+
+.intro ul {
+    padding-left: .3em;
+}
+
+.intro li {
+    list-style-type: none;
+    margin-left: .5em
+}
+
+.intro .customization-panel {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.intro .customization-title {
+    flex-basis: 100%;
+    padding: 10px 0;
+    font-size: 14pt;
+    text-shadow: 0 0 .3em #63baf7;
+    color: #fff;
+}
+
+.intro .customization-js {
+    margin-right: 2em;
+}
+
+
+/* стили калькулятора */
+
+
+.calculator {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    background-color: rgb(70, 0, 174);
+    padding: 10px;
+    z-index: 1000;
+    margin: auto;
+    border-radius: 20px;
+    /* Добавляем следующие свойства для центрирования */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & .calculator__elements {
+        display: flex;
+        flex-direction: column;
+
+        & .calculator__device {
+            background-color: black;
+            width: 100%;
+            height: 100px;
+            z-index: 1000;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        & .calculator__buttons {
+            display: grid;
+            gap: 10px;
+
+            & button {
+                border-radius: 100%;
+                width: 75px;
+                height: 75px;
+                color: white;
+                border: none;
+                font-size: 28px;
+                align-items: center;
+                transition: 0.3s;
+            }
+            
+            & .zero {
+                width: 155px;
+                border-radius: 100px;
+            }
+
+            & .button-grey {
+                background-color: var(--greyButton);
+
+                &:hover {
+                    background-color: rgb(183, 183, 183);
+                }
+            }
+
+            & .button-orange {
+                background-color: var(--orangeButton);
+
+                &:hover {
+                    background-color: rgb(255, 213, 136);
+                }
+            }
+
+            & .button-black {
+                background-color: var(--blackButton);
+
+                &:hover {
+                    background-color: rgb(87, 87, 87);
+                }
+            }
+        }
+    }
+}
